@@ -1,0 +1,3 @@
+class PressureSensor:
+    def __init__(self):
+        ...
