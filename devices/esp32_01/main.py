@@ -39,4 +39,3 @@ while True:
     except KeyboardInterrupt:
         print("\nCtrl+C fanget - lukker ned...")
         mqtt.disconnect_wifi()
-
