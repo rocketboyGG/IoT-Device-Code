@@ -1,6 +1,6 @@
 from machine import I2C, Pin
 from lib.battery_status import BatteryStatus
-from devices.esp32_01.lib.mqtt import MQTT
+from mqtt import MQTT
 from time import sleep, time
 from random import randint
 import ujson
