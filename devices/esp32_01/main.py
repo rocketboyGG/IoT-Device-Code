@@ -1,6 +1,4 @@
-from machine import I2C, Pin
 from lib.battery_status import BatteryStatus
-from mqtt import MQTT
 from time import sleep, time
 from random import randint
 import ujson
@@ -15,12 +13,9 @@ def sub_cb(topic, msg):
     except Exception as e:
         print("Fejl i behandling af besked:", e)
     
-
-#battery_status = BatteryStatus(34)
-mqtt = MQTT()
 mqtt.method_receive(sub_cb)
 
-INTERVAL = 5
+INTERVAL = 10
 last_publish = 0
 
 while True:
@@ -28,11 +23,10 @@ while True:
         mqtt.client.check_msg()  
         now = time()
         if now - last_publish >= INTERVAL:
-            print("New updates: ", check_update())
             telemetry = {
                 "device_id": mqtt.DEVICE_ID,
                 "timestamp": now,
-                "temperature": randint(0,30),
+                "temperature": randint(0,40),
             }
             mqtt.send_message(telemetry)
             last_publish = now
