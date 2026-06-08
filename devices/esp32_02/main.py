@@ -16,8 +16,6 @@ def sub_cb(topic, msg):
         print("Fejl i behandling af besked:", e)
     
 
-#battery_status = BatteryStatus(34)
-mqtt = MQTT()
 mqtt.method_receive(sub_cb)
 
 INTERVAL = 5

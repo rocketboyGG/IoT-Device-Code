@@ -1,4 +1,3 @@
-from lib.battery_status import BatteryStatus
 from time import sleep, time
 from lib.mqtt import MQTT
 from random import randint
@@ -14,7 +13,6 @@ def sub_cb(topic, msg):
     except Exception as e:
         print("Fejl i behandling af besked:", e)
     
-mqtt = MQTT()
 mqtt.method_receive(sub_cb)
 
 INTERVAL = 10
