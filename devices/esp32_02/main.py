@@ -1,5 +1,4 @@
 from machine import I2C, Pin
-from lib.battery_status import BatteryStatus
 from lib.mqtt import MQTT
 from time import sleep, time
 from random import randint
