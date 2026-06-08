@@ -25,7 +25,6 @@ while True:
         mqtt.client.check_msg()  
         now = time()
         if now - last_publish >= INTERVAL:
-            print("New updates: ", check_update())
             telemetry = {
                 "device_id": mqtt.DEVICE_ID,
                 "timestamp": now,
